@@ -1,9 +1,10 @@
 NAME	=	cub3d
 CC		=	@gcc
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -g
 RM		=	@rm -f
 OBJS	=	$(addprefix objs/, $(SRCS:.c=.o))
-SRCS	=	src/main.c src/check_name_map_argument.c src/check_number_of_arguments.c
+SRCS	=	src/main.c \
+			src/parse/parse_arguments.c src/parse/parse_map_name.c src/parse/parse.c
 LIBFT	=	libft/libft.a
 
 all: $(LIBFT) $(NAME)

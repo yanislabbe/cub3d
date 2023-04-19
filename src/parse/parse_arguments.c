@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../../include/cub3d.h"
 
-void	print_number_of_arguments_error(char *err)
+void	print_arguments_error(char *err)
 {
 	if (ft_strcmp(err, "AN_ARGUMENT_IS_MISSING") == 0)
 	{
@@ -28,7 +28,7 @@ int	an_argument_is_missing(int argc)
 {
 	if (argc < 2)
 	{
-		print_number_of_arguments_error("AN_ARGUMENT_IS_MISSING");
+		print_arguments_error("AN_ARGUMENT_IS_MISSING");
 		return (1);
 	}
 	return (0);
@@ -38,13 +38,13 @@ int	too_many_arguments(int argc)
 {
 	if (argc > 2)
 	{
-		print_number_of_arguments_error("TOO_MANY_ARGUMENTS");
+		print_arguments_error("TOO_MANY_ARGUMENTS");
 		return (1);
 	}
 	return (0);
 }
 
-int	check_number_of_arguments(int argc)
+int	parse_arguments(int argc)
 {
 	if (an_argument_is_missing(argc) == 1)
 	{

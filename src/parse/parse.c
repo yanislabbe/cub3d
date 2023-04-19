@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabbe <ylabbe@student.42quebec.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 10:30:47 by ylabbe            #+#    #+#             */
-/*   Updated: 2023/04/19 10:30:47 by ylabbe           ###   ########.fr       */
+/*   Created: 2023/04/19 10:32:00 by ylabbe            #+#    #+#             */
+/*   Updated: 2023/04/19 10:32:07 by ylabbe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../../include/cub3d.h"
 
-int	main(int argc, char **argv)
+int	parse_first_step(int argc, char **argv)
 {
-	if (parse(argc, argv) == 0)
+	if (parse_arguments(argc) == 1)
 	{
-		printf("\n\nÇa passe le first step check!!\n\n");
+		return (1);
+	}
+	if (parse_map_name_argument(argv) == 1)
+	{
+		return (1);
+	}
+	return (0);
+}
+
+int	parse(int argc, char **argv)
+{
+	if (parse_first_step(argc, argv) == 1)
+	{
+		return (1);
 	}
 	return (0);
 }

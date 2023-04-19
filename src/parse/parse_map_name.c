@@ -6,13 +6,13 @@
 /*   By: ylabbe <ylabbe@student.42quebec.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 20:52:47 by ylabbe            #+#    #+#             */
-/*   Updated: 2023/04/18 20:53:46 by ylabbe           ###   ########.fr       */
+/*   Updated: 2023/04/19 10:32:55 by ylabbe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../../include/cub3d.h"
 
-void	print_name_map_error(char *err)
+void	print_map_name_error(char *err)
 {
 	if (ft_strcmp(err, "MUST_END_WITH_CUB") == 0)
 	{
@@ -38,11 +38,11 @@ int	map_ends_with_cub(char *argv)
 	{
 		return (0);
 	}
-	print_name_map_error("MUST_END_WITH_CUB");
+	print_map_name_error("MUST_END_WITH_CUB");
 	return (1);
 }
 
-int	name_map_isspace(char *argv)
+int	map_name_isspace(char *argv)
 {
 	int	i;
 
@@ -51,10 +51,23 @@ int	name_map_isspace(char *argv)
 	{
 		if (ft_isspace(argv[i]) == 1)
 		{
-			print_name_map_error("UNSUPPORTED_CHARACTERS");
+			print_map_name_error("UNSUPPORTED_CHARACTERS");
 			return (1);
 		}
 		i++;
+	}
+	return (0);
+}
+
+int	parse_map_name_argument(char **argv)
+{
+	if (map_ends_with_cub(argv[1]) == 1)
+	{
+		return (1);
+	}
+	else if (map_name_isspace(argv[1]) == 1)
+	{
+		return (1);
 	}
 	return (0);
 }
