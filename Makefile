@@ -3,7 +3,7 @@ CC		=	@gcc
 CFLAGS	=	-Wall -Wextra -Werror -g
 RM		=	@rm -f
 OBJS	=	$(addprefix objs/, $(SRCS:.c=.o))
-SRCS	=	src/main.c get_next_line/get_next_line.c \
+SRCS	=	src/main.c \
 			src/parse/parse_arguments.c src/parse/parse_map_name.c src/parse/parse.c
 LIBFT	=	libft/libft.a
 

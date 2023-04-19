@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabbe <ylabbe@student.42quebec.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 10:47:48 by ylabbe            #+#    #+#             */
-/*   Updated: 2023/04/19 10:47:52 by ylabbe           ###   ########.fr       */
+/*   Created: 2023/04/19 12:32:53 by ylabbe            #+#    #+#             */
+/*   Updated: 2023/04/19 12:33:06 by ylabbe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
+void	ft_free_split(char **split)
+{
+	int	i;
 
-# define BUFFER_SIZE 1
-
-char	*get_next_line(int fd);
-
-#endif
+	i = 0;
+	while (split[i] != NULL)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}

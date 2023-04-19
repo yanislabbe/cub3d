@@ -14,11 +14,11 @@
 # define CUB3D_H
 
 # include "../libft/libft.h"
-# include "../get_next_line/get_next_line.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <fcntl.h>
 
 /*  parse.c */
 int		parse_first_step(int argc, char **argv);

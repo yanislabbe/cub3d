@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strslen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylabbe <ylabbe@student.42quebec.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 10:30:47 by ylabbe            #+#    #+#             */
-/*   Updated: 2023/04/19 10:30:47 by ylabbe           ###   ########.fr       */
+/*   Created: 2023/04/19 12:18:35 by ylabbe            #+#    #+#             */
+/*   Updated: 2023/04/19 12:18:54 by ylabbe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+size_t	ft_strslen(char **strs)
 {
-	if (parse(argc, argv) == 0)
-	{
-		printf("\n\nÇa passe le first step check!!\n\n");
-	}
-	return (0);
+	size_t	len;
+
+	len = 0;
+	while (strs[len] != NULL)
+		len++;
+	return (len);
 }
